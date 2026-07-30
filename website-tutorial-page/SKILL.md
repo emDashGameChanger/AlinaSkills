@@ -35,10 +35,9 @@ instead of inventing new markup/style per page.
 - The `topLinksDiv` nav block is duplicated on every page. If a new
   top-level page is added, update the nav block on **every** existing page
   to include it — don't leave pages out of sync.
-- While editing a page's nav, double check its existing links are correct
-  (there's a known pre-existing bug where some pages link "Science Book
-  Reviews" to `index.html` instead of `books.html` — fix it if you're
-  already touching that nav block).
+- "Science Book Reviews" currently points at `index.html` rather than
+  `books.html` on purpose, since `books.html` has no real content yet —
+  repoint it to `books.html` once that section has actual reviews.
 
 ## Voice
 
