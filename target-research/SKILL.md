@@ -21,15 +21,18 @@ docking-execution step (see the `docking-run` skill for that).
 - A binding site that's plausible to dock against (known active/allosteric
   site, or one fpocket identifies as high-druggability).
 
-## Sourcing an FDA-approved drug candidate list
+## FDA-approved drug candidate list
 
-- Use a recognized source for the approved-drug library (e.g. DrugBank's
-  approved-drug set, ZINC15's "FDA approved" subset, or another clearly
-  identified source) — don't hand-assemble an ad hoc list without recording
-  where it came from.
-- Record the source name, version/date pulled, and how many compounds it
-  contains. Libraries drift over time — reproducibility depends on knowing
-  exactly which snapshot was used.
+The library is already built: `biolab/data/drug_library.csv` (~1,859 FDA-approved
+drugs with SMILES, sourced from DrugCentral, CC BY-SA 4.0) and
+`biolab/ligands/*.pdbqt` (docking-ready structures), produced by
+`biolab/scripts/fetch_drug_library.py` and `prepare_ligand_library.py` — see
+`biolab/README.md`'s "Drug library" section. Use this library by default
+rather than hand-assembling a new one. If a target needs a richer/different
+source later (e.g. the Broad Institute Drug Repurposing Hub's
+mechanism-of-action annotations), record the source name, version/date
+pulled, and compound count the same way — reproducibility depends on knowing
+exactly which snapshot was used.
 
 ## Documenting findings
 

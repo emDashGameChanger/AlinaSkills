@@ -27,12 +27,22 @@ later.
 
 ## Docking
 
+**Single ligand** (exploratory/spot-check docking):
 - Prepare/convert files with Open Babel as needed (`.sdf`/`.pdb` → `.pdbqt`).
 - Write or update `config.txt` with receptor/ligand paths and the box
   center/size derived from the chosen pocket (or known binding site) plus a
   reasonable `search_depth`.
 - Run: `./AutoDock-Vina-GPU-2-1 --config config.txt`, capturing full stdout
   to a log file (don't let it just print to the terminal and get lost).
+
+**Whole FDA-approved drug library** (real screening campaign against a
+chosen target): use `biolab/scripts/batch_dock.py --receptor <target.pdbqt>
+--config <config-with-box> --run-name <descriptive-name>`, which screens the
+entire prepared library (`biolab/ligands/`, built by the `target-research`
+skill's drug-library pipeline) in one native Vina-GPU virtual-screening run
+and produces a ranked `results.csv`. Always run with `--limit 20` or so
+first as a smoke test on a new receptor/box before committing to the full
+library — see `biolab/README.md`'s "Drug library" section for details.
 
 ## Recording results
 
