@@ -1,9 +1,13 @@
 # AlinaSkills
 
-Claude Code skills for the BioMedBound / biolab drug-repurposing project.
-This directory is cloned directly to `~/.claude/skills/` on the project
-machine so the skills apply globally, and is pushed to
-`emDashGameChanger/AlinaSkills` on GitHub as the source of truth.
+Global Claude Code skills for the BioMedBound / biolab drug-repurposing
+project. This directory is cloned directly to `~/.claude/skills/` on the
+project machine so the skills apply globally, and is pushed to
+`emDashGameChanger/AlinaSkills` on GitHub.
+
+The four project-scoped skills listed below no longer live in this repo:
+they moved to `~/Projects/Alina/.claude/skills/` and only load when a Claude
+Code session is started from `~/Projects/Alina`.
 
 ## AI use & transparency
 
@@ -21,7 +25,7 @@ science — Claude Code extends reach, it doesn't ghostwrite the runner's
 effort out of the story. Don't scrub AI involvement out of posts, notes, or
 history to make the work look more "manual" than it is.
 
-## Skills
+## Project skills (now in `~/Projects/Alina/.claude/skills/`)
 
 - **docking-run** — run a standardized fpocket + AutoDock-Vina-GPU docking
   pass and log results reproducibly.
